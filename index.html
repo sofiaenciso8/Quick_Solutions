@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles/formulario.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>FORMULARIO DE REGISTRO E INICIO DE SESIÓN    </title>
+</head>
+<body>
+    <div class="container-form register">
+        <div class="information">
+            <div class="info-childs">
+                <h1>Bienvenido</h1> 
+                <p>Para unirte a nuestra comunidad por favor Inicia Sesion con tus datos
+                </p>
+                <br>
+                <input type="button" value="Inicio Sesion" id="sign-in">
+
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-chlids">
+                <h2>Crear una Cuenta</h2>
+                
+                
+                <form class="form"> 
+                    <label>
+                        <i class='bx bx-user-circle' ></i>
+                        <input type="text" placeholder="Usuario">
+                    </label>
+                    <label >
+                        <i class='bx bx-phone'></i>
+                        <input type="email" placeholder="Numero de telefono">
+                    </label>
+                    <label >
+                        <i class='bx bxs-lock-alt'></i>
+                        <input type="password" placeholder="Contraseña">
+                    </label>
+                    <button> Registrar  </button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+     
+
+
+
+    <div class="container-form login hide">
+        <div class="information">
+            <div class="info-childs">
+                <h1>No tienes cuenta?</h1> 
+                <p> Crea una cuenta muy facil. En cuestion desegundos
+                </p>
+                <br>
+                <input type="button" value="Registrarse" id="sign-up">
+
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-chlids">
+                <h2>Iniciar Sesion</h2>
+                
+                
+                <form class="form"> 
+                    <label>
+                        <i class='bx bx-user-circle' ></i>
+                        <input type="text" placeholder="Usuario">
+                    </label>
+                   
+                    <label >
+                        <i class='bx bxs-lock-alt'></i>
+                        <input type="password" placeholder="Contraseña">
+                    </label>
+                    <button> Iniciar Sesion  </button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script src="pages/formulario.js"></script>
+</body>
+</html> 
