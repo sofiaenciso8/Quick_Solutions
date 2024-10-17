@@ -1,0 +1,131 @@
+*{
+   padding: 0; 
+   margin: 0;
+   box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image:  url(/assets/foto\ parqueadero.jpg);
+    background-size: cover;
+    
+
+}
+
+
+.container-form{
+    border-radius: 20px;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1) ;
+    display: flex;
+    max-width: 500px;
+    transition: all 1s ease;
+    margin: 60px;
+    height: 600px;
+    border: solid thin;
+}
+.information{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #FFC805;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.info-chlids{
+    width: 100%;
+    padding: 0 30px;
+}
+.info-chlids h1 {
+    font-size: 2.5rem;
+    color:#333;
+}
+.info-chlids p {
+    margin: 15px 0;
+    color: #333;
+} 
+.info-childs input {
+    background-color: transparent;
+    outline: none;
+    border: solid;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: bacground-color .3s ease;
+}
+.info-childs input :hover{
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #9191bd;
+    border: none;
+    color: #fff;
+}
+.form-information{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    text-align: center;
+    background-color: #f8f8f8;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.form-information-childs h2{
+    font-size: 2rem;
+    color: #333;
+}
+.form-information-childs p{
+    color: #555;
+}
+.icons{
+    margin: 15px 0;
+}
+.icons i {
+    padding: 15px;
+    border: solid thin #46a2fd;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0 10px;
+    color: #46a2fd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: bacground-color 0.3 ease;
+}
+.form {
+    margin: 30px 0 0 0;
+}
+.form label{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.form label input{
+    width: 100%;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    color: #333;
+}
+.form label i{
+    color: black;
+}
+.form button{
+    background-color: #f8f8f8;
+    color: black;
+    border-radius: 5px;
+    border:solid;
+    padding: 5px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.hide{
+    position: absolute;
+    transform: translate(-1000px);
+
+    
+}
