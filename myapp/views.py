@@ -1,21 +1,23 @@
-from django.shortcuts import render, redirect
-from .models import Parqueadero, Vehiculo, Cliente
+from django.shortcuts import render, get_object_or_404
+from .models import Parqueadero, Usuario, Vehiculo, Mapa
 
-def inicio(request):
-    return render(request, 'inicio.html')
+def index_view(request):
+    return render(request, 'index.html')
 
-def agregar_vehiculo(request):
-    if request.method == 'POST':
-        # Lógica para agregar un vehículo
-        pass
-    return render(request, 'agregar_vehiculo.html')
+def parqueadero_view(request, parqueadero_id):
+    parqueadero = get_object_or_404(Parqueadero, id=parqueadero_id)
+    return render(request, 'parqueadero.html', {'parqueadero': parqueadero})
 
-def detalle_cliente(request, cliente_id):
-    cliente = Cliente.objects.get(id=cliente_id)
-    return render(request, 'detalle_cliente.html', {'cliente': cliente})
+def usuario_view(request, usuario_id):
+    usuario = get_object_or_404(Usuario, id=usuario_id)
+    return render(request, 'usuario.html', {'usuario': usuario})
 
-def generar_factura(request):
-    if request.method == 'POST':
-        # Lógica para generar una factura
-        pass
-    return render(request, 'generar_factura.html')
+def vehiculo_view(request, vehiculo_id):
+    vehiculo = get_object_or_404(Vehiculo, id=vehiculo_id)
+    return render(request, 'vehiculo.html', {'vehiculo': vehiculo})
+
+def mapa_view(request, mapa_id):
+    mapa = get_object_or_404(Mapa, id=mapa_id)
+    return render(request, 'mapa.html', {'mapa': mapa})
+
+

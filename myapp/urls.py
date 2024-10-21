@@ -1,9 +1,10 @@
 from django.urls import path
-from . import views
+from .views import index_view, parqueadero_view, usuario_view, vehiculo_view, mapa_view
 
 urlpatterns = [
-    path('', views.inicio, name='inicio'),
-    path('agregar_vehiculo/', views.agregar_vehiculo, name='agregar_vehiculo'),
-    path('cliente/<int:cliente_id>/', views.detalle_cliente, name='detalle_cliente'),
-    path('generar_factura/', views.generar_factura, name='generar_factura'),
+    path('', index_view, name='index'),  
+    path('parqueadero/<int:parqueadero_id>/', parqueadero_view, name='parqueadero'),
+    path('usuario/<int:usuario_id>/', usuario_view, name='usuario'),
+    path('vehiculo/<int:vehiculo_id>/', vehiculo_view, name='vehiculo'),
+    path('mapa/<int:mapa_id>/', mapa_view, name='mapa'),
 ]
