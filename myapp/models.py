@@ -1,6 +1,8 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 
+
+
 class Inicio(models.Model):
     titulo = models.CharField(max_length=100)
     descripcion = models.TextField()
@@ -15,8 +17,14 @@ class Parqueadero(models.Model):
     reporte_ingresos = models.TextField()
     ticket = models.CharField(max_length=100)
     registro = models.TextField()
+    nombre = models.CharField(max_length=100)  # Asegúrate de que este campo esté definido
+    direccion = models.CharField(max_length=255)  # Asegúrate de que este campo esté definido
+    capacidad = models.IntegerField()  # Asegúrate de que este campo esté definido
 
+    def __str__(self):
+        return self.nombre
     def parqueadero(self, factura_diaria, factura_mensual, reporte_ingresos, ticket, registro):
+       
         self.factura_diaria = factura_diaria
         self.factura_mensual = factura_mensual
         self.reporte_ingresos = reporte_ingresos
@@ -76,6 +84,13 @@ class Usuario(models.Model):
     nombre = models.CharField(max_length=100)
     rol = models.CharField(max_length=20, choices=ROLES)
 
+    nombre = models.CharField(max_length=100)
+    email = models.EmailField()  # Asegúrate de que este campo esté aquí
+    telefono = models.CharField(max_length=15, null=True, blank=True)  # Cambia esto
+
+    def __str__(self):
+        return self.nombre
+
     def administrador(self, nombre, telefono, contraseña, usuario):
          self.nombre = nombre
          self.telefono = telefono
@@ -123,10 +138,13 @@ class Usuario(models.Model):
         return f"Usuario {self.usuario} ha sido suspendido."
 
 class Vehiculo(models.Model):
-    placa = models.CharField(max_length=10, unique=True)
-    tipo_vehiculo = models.CharField(max_length=20)  
+    placa = models.CharField(max_length=10)
+    tipo_vehiculo = models.CharField(max_length=50)
+    marca = models.CharField(max_length=50)  # Asegúrate de que este campo exista
 
-    def agregar_vehiculo(self, placa, tipo_vehiculo):
+    def __str__(self):
+        return f"{self.placa} - {self.tipo_vehiculo} -  {self.marca}" 
+    def agregar_vehiculo(self, placa, tipo_vehiculo, marca):
         if Vehiculo.objects.filter(placa=placa).exists():
             raise ValidationError("La placa ya existe.")
         nuevo_vehiculo = Vehiculo(placa=placa, tipo_vehiculo=tipo_vehiculo)
@@ -144,6 +162,8 @@ class Vehiculo(models.Model):
 class Mapa(models.Model):
     disponibilidad = models.IntegerField()
     ubicacion = models.CharField(max_length=255)
+
+    
 
     def mapear(self, num_espacio, disponibilidad, ubicacion):
         self.disponibilidad = disponibilidad

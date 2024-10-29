@@ -2,11 +2,52 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mapa</title>
+    <title>Mapa Interactivo</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 400px; /* Altura del mapa */
+            width: 100%;   /* Ancho del mapa */
+        }
+    </style>
 </head>
 <body>
-    <h1>Detalles del Mapa</h1>
-    <p><strong>Disponibilidad:</strong> {{ mapa.disponibilidad }}</p>
-    <p><strong>Ubicación:</strong> {{ mapa.ubicacion }}</p>
+    <h1>Mapa Interactivo del Parqueadero</h1>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Inicializar el mapa
+        var map = L.map('map').setView([4.60971, -74.08175], 15); // Coordenadas para centrar el mapa (ejemplo: Bogotá)
+
+        // Capa de mapa
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Ejemplo de datos de los espacios del parqueadero (puedes usar tus datos del modelo)
+        var espacios = [
+            { id: 1, lat: 4.60971, lng: -74.08175, disponibilidad: 1 }, // Espacio 1
+            { id: 2, lat: 4.61000, lng: -74.08000, disponibilidad: 0 }, // Espacio 2 (ocupado)
+        ];
+
+        // Agregar marcadores para cada espacio
+        espacios.forEach(function(espacio) {
+            var color = espacio.disponibilidad ? 'green' : 'red';
+            var marker = L.circleMarker([espacio.lat, espacio.lng], {
+                radius: 10,
+                fillColor: color,
+                color: color,
+                fillOpacity: 0.5
+            }).addTo(map);
+
+            // Evento de clic en el marcador
+            marker.on('click', function() {
+                alert('Espacio seleccionado: ' + espacio.id + (espacio.disponibilidad ? ' (disponible)' : ' (ocupado)'));
+                // Aquí puedes hacer una llamada AJAX para actualizar la disponibilidad si es necesario
+            });
+        });
+    </script>
 </body>
 </html>

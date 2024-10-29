@@ -1,6 +1,7 @@
 from django import forms
 from .models import Vehiculo, Cliente
 
+
 class VehiculoForm(forms.ModelForm):
     class Meta:
         model = Vehiculo
