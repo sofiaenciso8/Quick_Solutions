@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Parqueadero</title>
+    <link rel="stylesheet" href="styles/sebastian.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+ <label for="toggle" id="label_toggle"><i class="fa-regular fa-moon"></i></label>
+ <input type="checkbox" id="toggle">
+ <div class="contenedor">
+</div>
+    <header>
+        
+        <h1>Bienvenido al Parqueadero la Metro 2</h1>
+        <nav>
+            
+            <a href="{% url 'parqueadero' 1 %}">Parqueaderos</a>
+            <a href="{% url 'usuario' 1 %}">Usuarios</a>
+            <a href="{% url 'vehiculo' 1 %}">Vehículos</a>
+            <a href="{% url 'mapa' 1 %}">Mapa</a>
+
+
+        </nav>
+    </header>
+    <main>
+        <h2>Servicios Disponibles</h2>
+        <p>Ofrecemos un servicio completo de parqueadero con opciones diarias y mensuales. Registra tu vehículo y disfruta de nuestras instalaciones.</p>
+    </main>
+    <footer>
+        <p>  Parqueadero la metro 2. - Quick-Solutions.</p>
+    </footer>
+    <script src="pages/sebastian.js"></script>
+</body>
+</html>
