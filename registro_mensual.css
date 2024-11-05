@@ -1,0 +1,91 @@
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .form-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  textarea {
+    resize: vertical;
+    height: 80px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .btn.save {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .btn.back {
+    background-color: #2196F3;
+    color: white;
+  }
+  .btn.clear {
+    background-color: #FFC107; /* Color de fondo */
+    color: #FFFFFF; /* Color de texto */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .btn.clear:hover {
+    background-color: #FFA07A; /* Color de fondo al pasar el mouse */
+  }

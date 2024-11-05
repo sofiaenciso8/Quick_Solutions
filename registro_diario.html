@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Diario de Clientes</title>
+    <link rel="stylesheet" href="registro_diario.css">
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="Iconos/logo.png" alt="Logo Parqueadero La Metro">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#vehiculos">Vehículos</a></li>
+                <li><a href="#reporte">Reporte</a></li>
+                <li><a href="#mapa">Mapa</a></li>
+            </ul>
+        </nav>
+        <div class="mode-toggle">
+            <span>Modo nocturno</span>
+            <input type="checkbox" id="darkModeToggle">
+        </div>
+        <div class="user-info">
+            <span>Anderson Rodríguez</span>
+            <img src="Iconos/usuario.png" alt="Usuario">
+        </div>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Registro Diario de Clientes</h2>
+            <p>Nota: Ventana para registro de clientes DIARIOS</p>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <input type="number" id="id" name="id" value="121785" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" value="Leonardo Parra">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="number" id="telefono" name="telefono" value="3254566985">
+                </div>
+                <div class="form-group">
+                    <label for="placa">Placa</label>
+                    <input type="text" id="placa" name="placa" value="kln234">
+                </div>
+                <div class="form-group">
+                    <label for="tipo-vehiculo">Tipo de vehículo</label>
+                    <select id="tipo-vehiculo" name="tipo-vehiculo">
+                        <option value="automovil">Automóvil</option>
+                        <option value="motocicleta">Motocicleta</option>
+                        <option value="camion">Camión</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="hora-ingreso">Hora de Ingreso</label>
+                    <input type="time" id="hora-ingreso" name="hora-ingreso">
+                </div>
+                <div class="form-group">
+                    <label for="hora-salida">Hora de Salida</label>
+                    <input type="time" id="hora-salida" name="hora-salida" readonly>
+                </div>
+                <!-- Botón de registrar salida justo debajo del campo de hora -->
+                <div class="form-group">
+                    <button type="button" id="registrar-salida" onclick="registrarSalida()">Registrar salida</button>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" name="descripcion" placeholder="Ej. Ford Fiesta con daños en el parabrisas..."></textarea>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn save">Guardar</button>
+                    <button type="button" class="btn back">Volver</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function registrarSalida() {
+            const horaSalidaInput = document.getElementById('hora-salida');
+            const fechaActual = new Date();
+
+            // Obtener la hora y minutos actuales en formato de 24 horas
+            const horas = String(fechaActual.getHours()).padStart(2, '0');
+            const minutos = String(fechaActual.getMinutes()).padStart(2, '0');
+
+            // Establecer el valor en el campo de "Hora de Salida"
+            horaSalidaInput.value = `${horas}:${minutos}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Mensual de Clientes</title>
+    <link rel="stylesheet" href="registro_mensual.css">
+</head>
+<body>
+    <section class="form-section">
+        <h2>Registro Mensual de Clientes</h2>
+        <center><p>Nota:Ventana para registros clientes MENSUALES</p></center>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input type="number" id="id" name="id" value="12456" readonly>
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" value="Isack Rondon">
+            </div>
+            <div class="form-group">
+                <label for="documento">Número de Documento</label>
+                <input type="number" id="documento" name="documento" value="54238905">
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="number" id="telefono" name="telefono" value="3254357089">
+            </div>
+            <div class="form-group">
+                <label for="placa">Placa</label>
+                <input type="text" id="placa" name="placa" value="JkA145">
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" name="direccion" value="Carrera 2 #2-40">
+            </div>
+            <div class="form-group">
+                    <label for="tipo-vehiculo">Tipo de vehículo</label>
+                    <select id="tipo-vehiculo" name="tipo-vehiculo">
+                        <option value="automovil">Automóvil</option>
+                        <option value="motocicleta">Motocicleta</option>
+                        <option value="camion">Camión</option>
+                    </select>
+            <div class="form-group">
+                <label for="fecha-inicio">Fecha de inicio</label>
+                <input type="date" id="fecha-inicio" name="fecha-inicio">
+            </div>
+            <div class="form-group">
+                <label for="fecha-fin">Fecha de fin</label>
+                <input type="date" id="fecha-fin" name="fecha-fin">
+            </div>
+            <div class="form-group">
+                <label for="costo-mensual">Costo mensual</label>
+                <input type="number" id="costo-mensual" name="costo-mensual">
+            </div>
+            <div class="form-buttons">
+                <button type="submit" class="btn save">Volver</button>
+                <button type="reset" class="btn clear">Limpiar</button>
+                <button type="submit" class="btn save">Guardar</button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
