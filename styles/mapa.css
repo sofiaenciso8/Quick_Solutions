@@ -1,0 +1,103 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Barra de Navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f6c344;
+    padding: 10px 20px;
+    color: #333333;
+}
+
+.logo img {
+    height: 45px;
+}
+
+.navbar nav a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.user {
+    display: block;
+    align-items: center;
+}
+
+.user span {
+    margin-right: 10px;
+}
+
+.user img {
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Mapa de Parqueo */
+.parking-map {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #eee;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.zone-title {
+    font-weight: bold;
+    padding: 5px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.parking-spot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    border: 2px solid #11100d;
+    background-color: rgb(40, 211, 34);
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    position: relative;
+}
+
+.parking-spot:before {
+    content: "";
+    font-size: 24px;
+    color: #060c06;
+    position: absolute;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .navbar nav a {
+        margin: 0 5px;
+        font-size: 12px;
+    }
+    
+    .parking-spot {
+        width: 50px;
+        height: 50px;
+        font-size: 12px;
+    }
+    
+}
