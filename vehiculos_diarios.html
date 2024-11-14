@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Vehículos</title>
+    <link rel="stylesheet" href="registro_vehiculo.css">
+</head>
+<body>
+    <header>
+            <div class="header-logo">
+                <img src="/Iconos/logo.png" alt="La Metro">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#vehiculos">Vehículos</a></li>
+                    <li><a href="#reporte">Reporte</a></li>
+                    <li><a href="#mapa">Mapa</a></li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <span>Anderson Rodríguez</span>
+                <img src="/Iconos/usuario.png" alt="Usuario">
+            </div>
+    </header>
+    <main>
+        <h2>Información del vehículo</h2>
+        <label for="placa">Placa</label>
+        <input type="text" id="placa" name="placa" required>
+
+        <label for="hora-ingreso">Hora de ingreso</label>
+        <input type="time" id="hora-ingreso" name="hora-ingreso" required>
+        
+        <label for="hora-salida">Hora de salida</label>
+        <input type="time" id="hora-salida" name="hora-salida" required>
+
+        <button type="button" id="registrar-salida" onclick="registrarSalida()">Registrar salida</button>
+        
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" name="descripcion" placeholder="Ej. Ford Fiesta con daños en el parabrisas..."></textarea>
+        
+        <div class="button-group">
+            <button type="submit" class="btn save">Guardar</button>
+            <button type="submit" class="btn edit">Editar</button>
+        </div>
+    </main>
+
+    <script>
+        function registrarSalida() {
+            const horaSalidaInput = document.getElementById('hora-salida');
+            const fechaActual = new Date();
+
+            // Obtener la hora y minutos actuales en formato de 24 horas
+            const horas = String(fechaActual.getHours()).padStart(2, '0');
+            const minutos = String(fechaActual.getMinutes()).padStart(2, '0');
+
+            // Establecer el valor en el campo de "Hora de Salida"
+            horaSalidaInput.value = `${horas}:${minutos}`;
+        }
+    </script>
+    <footer>
+        <p>&copy; 2024 La Metro 2. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
